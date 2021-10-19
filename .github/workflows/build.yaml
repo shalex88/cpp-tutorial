@@ -14,15 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Get repo name
-      id: repo-name
-      run: echo "::set-output name=value::$(echo "${{ github.repository }}" | awk -F '/' '{print $2}')"
-
     - name: Configure
       run: cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       run: cmake --build build --config ${{env.BUILD_TYPE}}
 
-    - name: Run
-      run: ./build/${{ steps.repo-name.outputs.value }}
+    - name: Run subproject 1
+      run: ./build/s4_challenge/s4_challenge
