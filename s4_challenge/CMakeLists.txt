@@ -8,4 +8,4 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "inc/*.h")
 
 add_compile_options(-Wall -Wextra -Wpedantic)
-add_executable(${PROJECT_NAME} main.cpp ${SOURCES} ${HEADERS})
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
