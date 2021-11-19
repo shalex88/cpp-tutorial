@@ -25,3 +25,6 @@ jobs:
 
     - name: Run subproject 2
       run: ./build/s6_challenge/s6_challenge
+
+    - name: Run subproject 3
+      run: ./build/s6_challenge/s7_challenge
