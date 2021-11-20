@@ -93,6 +93,11 @@ int main()
 				cout << "Goodbye" << endl;
 				break;
 			}
+			case 0: {
+				cout << "Escape infinite loop in Github Actions" << endl;
+				selection = 'Q';
+				break;
+			}
 			default: {
 				cout << "Invalid selection" << endl;
 			}
