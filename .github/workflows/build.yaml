@@ -20,5 +20,20 @@ jobs:
     - name: Build
       run: cmake --build build --config ${{env.BUILD_TYPE}}
 
-    - name: Run subproject 1
+    - name: Run s4_challenge
       run: ./build/s4_challenge/s4_challenge
+
+    - name: Run s6_challenge
+      run: ./build/s6_challenge/s6_challenge
+
+    - name: Run s7_challenge
+      run: ./build/s7_challenge/s7_challenge
+
+    - name: Run s8_challenge
+      run: ./build/s8_challenge/s8_challenge
+
+    - name: Run s9_challenge
+      run: ./build/s9_challenge/s9_challenge
+
+    - name: Run s10_challenge
+      run: ./build/s10_challenge/s10_challenge
