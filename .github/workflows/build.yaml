@@ -34,3 +34,6 @@ jobs:
 
     - name: Run s9_challenge
       run: ./build/s9_challenge/s9_challenge
+
+    - name: Run s10_challenge
+      run: ./build/s10_challenge/s10_challenge
