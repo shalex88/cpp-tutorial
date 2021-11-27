@@ -43,3 +43,6 @@ jobs:
 
     - name: Run s12_challenge
       run: ./build/s12_challenge/s12_challenge
+
+    - name: Run s13_challenge
+      run: ./build/s13_challenge/s13_challenge
