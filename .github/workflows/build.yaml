@@ -37,3 +37,12 @@ jobs:
 
     - name: Run s10_challenge
       run: ./build/s10_challenge/s10_challenge
+
+    - name: Run s11_challenge
+      run: ./build/s11_challenge/s11_challenge
+
+    - name: Run s12_challenge
+      run: ./build/s12_challenge/s12_challenge
+
+    - name: Run s13_challenge
+      run: ./build/s13_challenge/s13_challenge

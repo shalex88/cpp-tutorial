@@ -10,3 +10,6 @@ Source code based on [Beginning C++ Programming - From Beginner to Beyond](https
 * S8 - Statements and Operators
 * S9 - Controlling Program Flow
 * S10 - Characters and Strings
+* S11 - Functions
+* S12 - Pointers and References
+* S13 - OOP - Classes and Objects
