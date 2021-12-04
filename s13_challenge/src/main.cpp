@@ -16,7 +16,11 @@ void increment_watched(Movies &movies,string name) {
 }
 
 void add_movie(Movies &movies, string name, string rating, int times_watched) {
-	movies.add_movie(name, rating, times_watched);
+	if (movies.add_movie(name, rating, times_watched)) {
+		cout << name << " added" << endl;
+	} else {
+		cout << name << " already in the list" << endl;
+	}
 }
 
 int main() {
@@ -30,7 +34,16 @@ int main() {
 
 	my_movies.display();
 
+	add_movie(my_movies, "Cinderella", "PG", 7);
+	add_movie(my_movies, "Ice Age", "PG", 12);
+
+	my_movies.display();
+
 	increment_watched(my_movies, "Big");
+	increment_watched(my_movies, "Ice Age");
+	increment_watched(my_movies, "XXX");
+
+	my_movies.display();
 
 	return 0;
 }

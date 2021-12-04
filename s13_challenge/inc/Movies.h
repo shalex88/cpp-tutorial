@@ -16,7 +16,7 @@ class Movies
 	Movies();
 	bool add_movie(string name_val = "Unknown", string rating_val = "None", int times_watched_val = 0);
 	bool increment_watched(string name_val);
-	void display();
+	void display() const;
 };
 
 #endif //_MOVIES_H_
