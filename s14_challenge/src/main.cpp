@@ -1,133 +1,85 @@
 #include <iostream>
-#include <cstring>
+#include "Mystring.h"
 
-using namespace std;
+using std::cin;
 using std::cout;
 using std::endl;
 
-class Mystring {
- private:
-  char *str;
- public:
-  Mystring(); //no-args constructor
-  Mystring(const char *s); //overloaded constructor
-  Mystring(const Mystring &source); //copy constructor - shallow
-  Mystring(Mystring &&source) noexcept; //move constructor
-  Mystring &operator=(const Mystring &rhs) noexcept; //copy assignment - deep
-  Mystring &operator=(Mystring &&rhs) noexcept; //move assignment
-  ~Mystring(); //destructor
-  void display() const;
-  size_t get_length() const;
-  const char *get_str() const;
-};
-
-//no-args constructor
-Mystring::Mystring()
-	: str{nullptr} {
-  str = new char[1];
-  *str = '\0';
-  cout << "no-args constructor" << endl;
-}
-
-//overloaded constructor
-Mystring::Mystring(const char *s)
-	: str{nullptr} {
-  if (s == nullptr) {
-	str = new char[1];
-	*str = '\0';
-  } else {
-	str = new char[std::strlen(s) + 1];
-	std::strcpy(str, s);
-  }
-  cout << "overloaded constructor" << endl;
-}
-
-//copy constructor - shallow
-Mystring::Mystring(const Mystring &source)
-	: str{nullptr} {
-  str = new char[std::strlen(source.str) + 1];
-  std::strcpy(str, source.str);
-  cout << "copy constructor - shallow" << endl;
-}
-
-//move constructor
-Mystring::Mystring(Mystring &&source) noexcept
-	: str{source.str} {
-  source.str = nullptr;
-  cout << "move constructor" << endl;
-}
-
-//copy assignment - deep
-Mystring &Mystring::operator=(const Mystring &rhs) noexcept {
-  if (this == &rhs) //check for self-assignment
-	return *this;
-
-  delete[] str; //deallocate current storage
-  str = new char[std::strlen(rhs.str) + 1]; //allocate new storage
-  std::strcpy(str, rhs.str);
-
-  cout << "copy assignment - deep" << endl;
-
-  return *this;
-}
-
-//move assignment
-Mystring &Mystring::operator=(Mystring &&rhs) noexcept {
-  if (this == &rhs) //check for self-assignment
-	return *this;
-
-  delete[] str; //deallocate current storage
-  str = rhs.str; //steal the pointer
-  rhs.str = nullptr; //null the rhs object
-
-  cout << "move assignment" << endl;
-
-  return *this;
-}
-
-//destructor
-Mystring::~Mystring() {
-  delete[] str;
-}
-
-void Mystring::display() const {
-  cout << str << " : " << get_length() << endl;
-}
-
-size_t Mystring::get_length() const {
-  return std::strlen(str);
-}
-
-const char *Mystring::get_str() const {
-  return str;
-}
-
 int main() {
-  cout << "--- a ---" << endl;
+  cout << "--- No-arg constructor ---" << endl;
   Mystring a;
   a.display();
 
-  cout <<  endl << "--- b ---" << endl;
+  cout <<  endl << "--- Overloaded constructor ---" << endl;
   Mystring b("Larry");
   b.display();
 
-  cout << endl << "--- c ---" << endl;
+  cout <<  endl << "--- Overloaded stream insertion operator ---" << endl;
+  cout << b << endl;
+
+  cout << endl << "--- Copy constructor - shallow ---" << endl;
   Mystring c{b};
-  c.display();
+  cout << c << endl;
 
-  cout << endl << "--- d ---" << endl;
-  Mystring d;
-  d = c;
-  b.display();
+  cout << endl << "--- Move constructor should be used. Optimized out by compilers copy elision (RVO) ---" << endl;
+  Mystring d {Mystring{"Alex"}};
+  cout << d << endl;
 
-  cout << endl << "--- e ---" << endl;
+  cout << endl << "--- Copy assignment - deep ---" << endl;
   Mystring e;
-  e = Mystring{"Alex"};
-  e.display();
+  e = c;
+  cout << e << endl;
 
-  cout << endl << "--- f ---" << endl;
-  Mystring f {Mystring{"Alex"}};
-  f.display();
+  cout << endl << "--- Move assignment ---" << endl;
+  Mystring f;
+  f = Mystring{"Alex"};
+  cout << f << endl;
 
+  cout << endl << "--- Equality ---" << endl;
+  b = "george";
+  cout << std::boolalpha;
+  cout << (b == c) << endl;
+  cout << (b != c) << endl;
+  cout << (b < c) << endl;
+  cout << (b > c) << endl;
+
+  cout << endl << "--- Concatenate ---" << endl;
+  Mystring s1 {"FRANK"};
+  s1 = s1 + "*****";
+  cout << s1 << endl;
+
+  cout << endl << "--- Concatenate and assign ---" << endl;
+  s1 += ".....";
+  cout << s1 << endl;
+
+  cout << endl << "--- Repeat n times ---" << endl;
+  Mystring s2{"12345"};
+  s1 = s2 * 3;
+  cout << s1 << endl;
+
+  cout << endl << "--- Repeat and assign ---" << endl;
+  Mystring s3{"abcdef"};
+  s3 *= 5;
+  cout << s3 << endl;
+
+  cout << endl << "--- Make uppercase ---" << endl;
+  Mystring s = "Frank";
+  ++s;
+  cout << s << endl;
+
+  cout << endl << "--- Make lowercase ---" << endl;
+  --s;
+  cout << s << endl;
+
+  cout << endl << "--- Make uppercase and assign ---" << endl;
+  Mystring result;
+  result = +s;
+  cout << s << endl;
+  cout << result << endl;
+
+  cout << endl << "--- Make lowercase and assign ---" << endl;
+  s = -result;
+  cout << result << endl;
+  cout << s << endl;
   return 0;
 }
