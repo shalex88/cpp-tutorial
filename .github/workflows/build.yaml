@@ -49,3 +49,6 @@ jobs:
 
     - name: Run s14_challenge
       run: ./build/s14_challenge/s14_challenge
+
+    - name: Run s15_challenge
+      run: ./build/s15_challenge/s15_challenge
