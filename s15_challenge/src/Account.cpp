@@ -2,34 +2,33 @@
 #include "Account.h"
 
 Account::Account(std::string name, double balance)
-  : balance {balance}, name {name} {
-  std::cout << name << " created. Balance: " << balance << std::endl;
+  : name {name}, balance {balance}  {
+  std::cout << "Created " << name << ": " << balance << std::endl;
 }
 
-//Account::Account(double balance)
-//  : Account (balance, "Account") {
-//}
-
-//Account::Account()
-//  : Account (0) {
-//}
-
-void Account::deposit(double amount) {
-  std::cout << name << " Deposit: " << amount << std::endl;
-  balance += amount;
-}
-
-void Account::withdraw(double amount) {
-  if (balance > amount) {
-	std::cout << name << " Withdraw: " << amount << std::endl;
-	balance -= amount;
+bool Account::deposit(double amount) {
+  if (amount < 0) {
+	return false;
   } else {
-	std::cout << "Insufficient funds" << std::endl;
+	balance += amount;
+	return true;
+  }
+}
+
+bool Account::withdraw(double amount) {
+  if (balance > amount) {
+	balance -= amount;
+	return true;
+  } else {
+	return false;
   }
 }
 
 std::ostream &operator<<(std::ostream &os, const Account &account) {
-  os << account.name << " Balance: " << account.balance << std::endl;
-  os << "-------------------------" << std::endl;
+  os << "[Account: " << account.name << ": " << account.balance << "]";
   return os;
+}
+
+double Account::get_balance() const {
+	return balance;
 }
