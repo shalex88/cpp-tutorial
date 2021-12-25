@@ -15,3 +15,4 @@ Source code based on [Beginning C++ Programming - From Beginner to Beyond](https
 * S13 - OOP - Classes and Objects
 * S14 - Operator overloading
 * S15 - Inheritance
+* S16 - Polymorphism
