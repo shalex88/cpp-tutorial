@@ -46,3 +46,15 @@ jobs:
 
     - name: Run s13_challenge
       run: ./build/s13_challenge/s13_challenge
+
+    - name: Run s14_challenge
+      run: ./build/s14_challenge/s14_challenge
+
+    - name: Run s15_challenge
+      run: ./build/s15_challenge/s15_challenge
+
+    - name: Run s16_challenge
+      run: ./build/s16_challenge/s16_challenge
+
+    - name: Run s17_challenge
+      run: ./build/s17_challenge/s17_challenge
