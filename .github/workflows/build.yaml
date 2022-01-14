@@ -55,3 +55,6 @@ jobs:
 
     - name: Run s16_challenge
       run: ./build/s16_challenge/s16_challenge
+
+    - name: Run s17_challenge
+      run: ./build/s17_challenge/s17_challenge
