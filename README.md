@@ -17,3 +17,4 @@
 * S15 - Inheritance
 * S16 - Polymorphism
 * S17 - Smart Pointers
+* S18 - Exception Handling
