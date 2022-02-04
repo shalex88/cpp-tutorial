@@ -62,5 +62,8 @@ jobs:
     - name: Run s18_challenge
       run: ./build/s18_challenge/s18_challenge
 
-    - name: Run s19_challenge
-      run: ./build/s19_challenge/s19_challenge
+    - name: Run s19_1_challenge
+      run: ./build/s19_1_challenge/s19_1_challenge
+
+    - name: Run s19_2_challenge
+      run: ./build/s19_2_challenge/s19_2_challenge

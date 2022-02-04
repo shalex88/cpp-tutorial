@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(s19_challenge)
+project(s19_1_challenge)
 
 set(CMAKE_CXX_STANDARD 20)
 
