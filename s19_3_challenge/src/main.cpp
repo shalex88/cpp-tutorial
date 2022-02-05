@@ -1,7 +1,5 @@
 #include <iostream>
-#include <string>
 #include <fstream>
-#include <vector>
 
 int main() {
   std::string filename {"..//..//s19_3_challenge//files//romeoandjuliet.txt"};

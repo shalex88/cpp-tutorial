@@ -74,3 +74,8 @@ jobs:
       run: |
         cd ./build/s19_3_challenge
         ./s19_3_challenge
+
+    - name: Run s19_4_challenge
+      run: |
+        cd ./build/s19_4_challenge
+        ./s19_4_challenge
