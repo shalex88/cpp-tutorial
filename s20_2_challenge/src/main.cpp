@@ -126,6 +126,11 @@ int main() {
 		case 'Q': {
 			break;
 		}
+		case 0: {
+			std::cout << "Escape infinite loop in Github Actions" << std::endl;
+			selection = 'Q';
+			break;
+		}
 		default:
 			std::cout << "Invalid input" << std::endl;
 		}
