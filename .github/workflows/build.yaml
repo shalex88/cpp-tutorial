@@ -58,3 +58,44 @@ jobs:
 
     - name: Run s17_challenge
       run: ./build/s17_challenge/s17_challenge
+
+    - name: Run s18_challenge
+      run: ./build/s18_challenge/s18_challenge
+
+    - name: Run s19_1_challenge
+      run: ./build/s19_1_challenge/s19_1_challenge
+
+    - name: Run s19_2_challenge
+      run: |
+        cd ./build/s19_2_challenge
+        ./s19_2_challenge
+
+    - name: Run s19_3_challenge
+      run: |
+        cd ./build/s19_3_challenge
+        ./s19_3_challenge
+
+    - name: Run s19_4_challenge
+      run: |
+        cd ./build/s19_4_challenge
+        ./s19_4_challenge
+
+    - name: Run s20_1_challenge
+      run: |
+        cd ./build/s20_1_challenge
+        ./s20_1_challenge
+
+    - name: Run s20_2_challenge
+      run: |
+        cd ./build/s20_2_challenge
+        ./s20_2_challenge
+
+    - name: Run s20_3_challenge
+      run: |
+        cd ./build/s20_3_challenge
+        ./s20_3_challenge
+
+    - name: Run s20_4_challenge
+      run: |
+        cd ./build/s20_4_challenge
+        ./s20_4_challenge
