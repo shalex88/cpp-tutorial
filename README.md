@@ -20,3 +20,5 @@
 * S18 - Exception Handling
 * S19 - I/O and Streams
 * S20 - Standard Template Library (STL)
+
+[Design Patterns in Modern C++](https://www.udemy.com/course/patterns-cplusplus/)
