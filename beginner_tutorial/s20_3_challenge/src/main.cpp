@@ -44,7 +44,7 @@ void part1() {
 	std::map<std::string, int> words;
 	std::string line;
 	std::string word;
-	std::ifstream in_file {"..//..//s20_3_challenge//files//words.txt"};
+	std::ifstream in_file {"..//..//..//beginner_tutorial//s20_3_challenge//files//words.txt"};
 	if (in_file) {
 		while (std::getline(in_file, line)) {
 			std::stringstream ss(line);
@@ -67,7 +67,7 @@ void part2() {
 	std::map<std::string, std::set<int>> words;
 	std::string line;
 	std::string word;
-	std::ifstream in_file {"..//..//s20_3_challenge//files//words.txt"};
+	std::ifstream in_file {"..//..//..//beginner_tutorial//s20_3_challenge//files//words.txt"};
 	if (in_file) {
 
 		// You implement this code

@@ -10,7 +10,7 @@ class Student {
 };
 
 int main() {
-  std::string filename {"..//..//s19_2_challenge//files//file.txt"};
+  std::string filename {"..//..//..//beginner_tutorial//s19_2_challenge//files//file.txt"};
   std::ifstream in_file {filename};
   if (!in_file) {
 	std::cerr << "Error opening file" << std::endl;

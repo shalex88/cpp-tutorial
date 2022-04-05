@@ -15,87 +15,145 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Configure
-      run: cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$BUILD_TYPE
 
     - name: Build
       run: cmake --build build --config ${{env.BUILD_TYPE}}
 
     - name: Run s4_challenge
-      run: ./build/s4_challenge/s4_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s4_challenge
 
     - name: Run s6_challenge
-      run: ./build/s6_challenge/s6_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s6_challenge
 
     - name: Run s7_challenge
-      run: ./build/s7_challenge/s7_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s7_challenge
 
     - name: Run s8_challenge
-      run: ./build/s8_challenge/s8_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s8_challenge
 
     - name: Run s9_challenge
-      run: ./build/s9_challenge/s9_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s9_challenge
 
     - name: Run s10_challenge
-      run: ./build/s10_challenge/s10_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s10_challenge
 
     - name: Run s11_challenge
-      run: ./build/s11_challenge/s11_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s11_challenge
 
     - name: Run s12_challenge
-      run: ./build/s12_challenge/s12_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s12_challenge
 
     - name: Run s13_challenge
-      run: ./build/s13_challenge/s13_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s13_challenge
 
     - name: Run s14_challenge
-      run: ./build/s14_challenge/s14_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s14_challenge
 
     - name: Run s15_challenge
-      run: ./build/s15_challenge/s15_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s15_challenge
 
     - name: Run s16_challenge
-      run: ./build/s16_challenge/s16_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s16_challenge
 
     - name: Run s17_challenge
-      run: ./build/s17_challenge/s17_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s17_challenge
 
     - name: Run s18_challenge
-      run: ./build/s18_challenge/s18_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s18_challenge
 
     - name: Run s19_1_challenge
-      run: ./build/s19_1_challenge/s19_1_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s19_1_challenge
 
     - name: Run s19_2_challenge
-      run: |
-        cd ./build/s19_2_challenge
-        ./s19_2_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s19_2_challenge
 
     - name: Run s19_3_challenge
-      run: |
-        cd ./build/s19_3_challenge
-        ./s19_3_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s19_3_challenge
 
     - name: Run s19_4_challenge
-      run: |
-        cd ./build/s19_4_challenge
-        ./s19_4_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s19_4_challenge
 
     - name: Run s20_1_challenge
-      run: |
-        cd ./build/s20_1_challenge
-        ./s20_1_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s20_1_challenge
 
     - name: Run s20_2_challenge
-      run: |
-        cd ./build/s20_2_challenge
-        ./s20_2_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s20_2_challenge
 
     - name: Run s20_3_challenge
-      run: |
-        cd ./build/s20_3_challenge
-        ./s20_3_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s20_3_challenge
 
     - name: Run s20_4_challenge
-      run: |
-        cd ./build/s20_4_challenge
-        ./s20_4_challenge
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: beginner_tutorial
+        bin: s20_4_challenge
+
+    - name: Run builder
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: design_patterns
+        bin: builder
