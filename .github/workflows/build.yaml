@@ -152,8 +152,8 @@ jobs:
         sub_project: beginner_tutorial
         bin: s20_4_challenge
 
-    - name: Run builder
+    - name: Run singleton
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: design_patterns
-        bin: builder
+        sub_project: "design_patterns/creational"
+        bin: singleton

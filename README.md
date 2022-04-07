@@ -21,4 +21,12 @@
 * S19 - I/O and Streams
 * S20 - Standard Template Library (STL)
 
-[Design Patterns in Modern C++](https://www.udemy.com/course/patterns-cplusplus/)
+[Design Patterns in C++](https://www.pluralsight.com/paths/c-design-patterns)
+
+Creational
+
+* Singleton
+
+Structural
+
+Behavioral
