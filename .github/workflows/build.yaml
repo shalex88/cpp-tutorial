@@ -163,3 +163,9 @@ jobs:
       env:
         sub_project: "design_patterns/builder"
         bin: builder
+
+    - name: Run prototype
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: "design_patterns/prototype"
+        bin: prototype
