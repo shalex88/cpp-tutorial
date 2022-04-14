@@ -2,8 +2,10 @@
 #include <fstream>
 
 int main() {
-  std::string in_filename {"..//..//..//beginner_tutorial//s19_4_challenge//files//romeoandjuliet.txt"};
-  std::string out_filename {"..//..//..//beginner_tutorial//s19_4_challenge//files//romeoandjuliet_copy.txt"};
+  std::string in_filename {"..//..//..//..//beginner_tutorial//s19_challenge//s19_4_challenge//files//romeoandjuliet"
+						   ".txt"};
+  std::string out_filename {"..//..//..//..//beginner_tutorial//s19_challenge//s19_4_challenge//files"
+							"//romeoandjuliet_copy.txt"};
 
   std::ifstream in_file {in_filename};
   if (!in_file) {
