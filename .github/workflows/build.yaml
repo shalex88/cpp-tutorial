@@ -181,3 +181,9 @@ jobs:
       env:
         sub_project: "design_patterns/creational"
         bin: abstract-factory
+
+    - name: Run dependency injection
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: "design_patterns/creational"
+        bin: dependency-injection
