@@ -107,49 +107,49 @@ jobs:
     - name: Run s19_1_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s19_challenge"
         bin: s19_1_challenge
 
     - name: Run s19_2_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s19_challenge"
         bin: s19_2_challenge
 
     - name: Run s19_3_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s19_challenge"
         bin: s19_3_challenge
 
     - name: Run s19_4_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s19_challenge"
         bin: s19_4_challenge
 
     - name: Run s20_1_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s20_challenge"
         bin: s20_1_challenge
 
     - name: Run s20_2_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s20_challenge"
         bin: s20_2_challenge
 
     - name: Run s20_3_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s20_challenge"
         bin: s20_3_challenge
 
     - name: Run s20_4_challenge
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: beginner_tutorial
+        sub_project: "beginner_tutorial/s20_challenge"
         bin: s20_4_challenge
 
     - name: Run singleton
@@ -161,11 +161,11 @@ jobs:
     - name: Run builder
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: "design_patterns/builder"
+        sub_project: "design_patterns/creational"
         bin: builder
 
     - name: Run prototype
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
-        sub_project: "design_patterns/prototype"
+        sub_project: "design_patterns/creational"
         bin: prototype
