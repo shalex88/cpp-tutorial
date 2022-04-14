@@ -157,3 +157,9 @@ jobs:
       env:
         sub_project: "design_patterns/creational"
         bin: singleton
+
+    - name: Run builder
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: "design_patterns/builder"
+        bin: builder
