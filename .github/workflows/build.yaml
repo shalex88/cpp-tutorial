@@ -169,3 +169,15 @@ jobs:
       env:
         sub_project: "design_patterns/creational"
         bin: prototype
+
+    - name: Run factory method
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: "design_patterns/creational"
+        bin: factory-method
+
+    - name: Run abstract factory
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: "design_patterns/creational"
+        bin: abstract-factory

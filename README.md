@@ -28,6 +28,7 @@
 * [Singleton](design_patterns/creational/singleton)
 * [Builder](design_patterns/creational/builder)
 * [Prototype](design_patterns/creational/prototype)
+* [Factory Method](design_patterns/creational/factory-method)
 
 ### Structural
 
