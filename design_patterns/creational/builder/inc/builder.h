@@ -11,19 +11,28 @@ class CoffeeBuilder;
 // Coffee class declaration
 class Coffee
 {
-	std::string requesterName;
-
-public:
-	bool isHot;
-	bool hasMilk;
-	bool hasSugar;
+	std::string requester_name;
+	bool is_hot;
+	bool has_milk;
+	bool has_sugar;
 	double cost;
 
-	explicit Coffee(std::string requesterName) : requesterName(std::move(requesterName)), isHot(false), hasMilk
-		(false), hasSugar(false), cost(0.0) {}
+	// Private constructor to avoid building without builder
+	explicit Coffee(std::string requester_name);
 
+public:
 	friend class CoffeeBuilder;
-	static CoffeeBuilder create(std::string requesterName);
+	static CoffeeBuilder create(std::string requester_name);
+
+	const std::string& getRequesterName() const;
+	bool isHot() const;
+	void setIsHot(bool is_hot);
+	bool isHasMilk() const;
+	void setHasMilk(bool has_milk);
+	bool isHasSugar() const;
+	void setHasSugar(bool has_sugar);
+	double getCost() const;
+	void setCost(double cost);
 };
 
 // CoffeeBuilder class declaration - responsible for building a Coffee
@@ -32,10 +41,10 @@ class CoffeeBuilder
 	Coffee coffee;
 
 public:
-	explicit CoffeeBuilder(std::string requesterName) : coffee(Coffee(std::move(requesterName))) {}
+	explicit CoffeeBuilder(std::string requester_name);
 
 	// This operator allows us to convert from a CoffeeBuilder to a Coffee
-	operator Coffee() const {return coffee;}
+	operator Coffee() const;
 
 	CoffeeBuilder& makeHot();
 	CoffeeBuilder& addMilk();
