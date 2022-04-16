@@ -2,18 +2,21 @@
 #include "builder.h"
 
 int main() {
-	Coffee coffee = Coffee::create("Zachary")
+	// Can't compile this line because the constructor is private
+	// Coffee coffee("Alex");
+
+	Coffee coffee_1 = Coffee::create("Zachary")
 		.makeHot()
 		.addSugar()
 		.addMilk()
 		.costs(4.00);
 
-	Coffee coffee2 = Coffee::create("Jennifer")
+	Coffee coffee_2 = Coffee::create("Jennifer")
 		.makeHot()
 		.costs(3.50);
 
-	std::cout << coffee.cost << std::endl;
-	std::cout << coffee2.cost << std::endl;
+	std::cout << coffee_1.getCost() << std::endl;
+	std::cout << coffee_2.getCost() << std::endl;
 
 	return 0;
 }
