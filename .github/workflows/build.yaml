@@ -12,10 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Setup vcpkg
+      uses: lukka/run-vcpkg@v10
+      with:
+        vcpkgGitCommitId: 'c37cc7836a0e1cfd55747be8ec472eafa8055276'
 
     - name: Configure
-      run: cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+      run: cmake -G "Unix Makefiles" -B build -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
 
     - name: Build
       run: cmake --build build --config ${{env.BUILD_TYPE}}
@@ -187,3 +193,9 @@ jobs:
       env:
         sub_project: "design_patterns/creational"
         bin: dependency-injection
+
+    - name: Run adapter
+      run: cd ./build/$sub_project/$bin && ./$bin
+      env:
+        sub_project: "design_patterns/structural"
+        bin: adapter
