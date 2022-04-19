@@ -34,4 +34,6 @@
 
 ### Structural
 
+* [Adapter](design_patterns/structural/adapter)
+
 ### Behavioral
