@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
+
 project(adapter)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -13,5 +14,5 @@ file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "inc/*.h")
 add_compile_options(-Wall -Wextra -Wpedantic)
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${RapidJSON_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PRIVATE ${RAPIDJSON_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE restclient-cpp)

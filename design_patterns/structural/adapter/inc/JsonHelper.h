@@ -5,5 +5,5 @@
 class JsonHelper
 {
 public:
-	//static std::string GetMatchingTitleIdFromMovieList(const std::string& title, const std::string& jsonString);
+	static std::string GetMatchingTitleIdFromMovieList(const std::string& title, const std::string& jsonString);
 };
