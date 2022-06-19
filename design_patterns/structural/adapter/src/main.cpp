@@ -27,7 +27,7 @@ int main()
 	manager_2.ShowMovieDetails(MOVIE_ID);
 
 	std::cout << "--- File API with Object Adapter --" << std::endl;
-	FileBasedApi file_api(R"(..//..//..//..//design_patterns//structural//adapter//files//)");
+	FileBasedApi file_api(R"(files//)");
 	MovieApiAdapter adapter_3(file_api);
 	const MovieManager manager_3(adapter_3);
 	manager_3.ShowMovieDetails (MOVIE_ID);

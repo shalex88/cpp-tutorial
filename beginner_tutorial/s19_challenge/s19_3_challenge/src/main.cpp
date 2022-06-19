@@ -2,7 +2,7 @@
 #include <fstream>
 
 int main() {
-  std::string filename {"..//..//..//..//beginner_tutorial//s19_challenge//s19_3_challenge//files//romeoandjuliet.txt"};
+  std::string filename {"files//romeoandjuliet.txt"};
   std::ifstream in_file {filename};
   if (!in_file) {
 	std::cerr << "Error opening file" << std::endl;

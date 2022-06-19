@@ -16,3 +16,8 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${RAPIDJSON_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE restclient-cpp)
+
+# Install resources
+file(
+    COPY ${CMAKE_CURRENT_LIST_DIR}/files
+    DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

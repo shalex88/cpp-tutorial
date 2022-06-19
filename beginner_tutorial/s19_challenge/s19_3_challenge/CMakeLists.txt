@@ -9,3 +9,8 @@ file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "inc/*.h")
 
 add_compile_options(-Wall -Wextra -Wpedantic)
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+# Install resources
+file(
+    COPY ${CMAKE_CURRENT_LIST_DIR}/files
+    DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
