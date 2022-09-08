@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+
+class CoffeeMachineFactory {
++create_machine(): std::unique_ptr<ICoffeeMachine>
+}
+note top: auto factory = std::make_unique<CoffeeMachineFactory>()\n\
+auto machine_one = factory->create_machine(1);\n\
+machine_one->brew();
+
+interface ICoffeeMachine {
++{abstract}brew()
+}
+
+class RobustCoffeeMachine {
++brew()
+}
+note left: std::make_unique<SimpleCoffeeMachine>()
+class SimpleCoffeeMachine {
++brew()
+}
+
+CoffeeMachineFactory -> ICoffeeMachine
+ICoffeeMachine <|.. SimpleCoffeeMachine
+ICoffeeMachine <|.. RobustCoffeeMachine
+
+
+
+@enduml

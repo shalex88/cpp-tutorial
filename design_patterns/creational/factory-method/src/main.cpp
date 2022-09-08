@@ -5,6 +5,7 @@ class ICoffeeMachine
 {
 public:
 	virtual void brew() = 0;
+	virtual ~ICoffeeMachine() = default;
 };
 
 class SimpleCoffeeMachine : public ICoffeeMachine
@@ -38,7 +39,7 @@ public:
 };
 
 int main() {
-	std::unique_ptr<CoffeeMachineFactory> factory = std::make_unique<CoffeeMachineFactory>();
+	auto factory = std::make_unique<CoffeeMachineFactory>();
 
 	auto machine_one = factory->create_machine(1);
 	auto machine_two = factory->create_machine(2);
