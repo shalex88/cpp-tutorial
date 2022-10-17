@@ -93,13 +93,12 @@ std::ostream &operator<<(std::ostream &os, const Mystring &rhs)
 }
 
 // overloaded extraction operator
-std::istream &operator>>(std::istream &in, Mystring &rhs)
+std::istream &operator>>(std::istream &is, Mystring &rhs)
 {
-  char *buff = new char[1000];
-  in >> buff;
-  rhs = Mystring{buff};
-  delete [] buff;
-  return in;
+  std::string buff;
+  is >> buff;
+  rhs = Mystring{buff.c_str()};
+  return is;
 }
 
 // Equals
