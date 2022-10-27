@@ -37,3 +37,5 @@
 * [Adapter](design_patterns/structural/adapter)
 
 ### Behavioral
+
+* [Observer](design_patterns/behavioral/observer)
