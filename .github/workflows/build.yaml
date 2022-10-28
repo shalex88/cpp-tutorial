@@ -199,4 +199,4 @@ jobs:
       run: cd ./build/$sub_project/$bin && ./$bin
       env:
         sub_project: "design_patterns/behavioral"
-        bin: adapter
+        bin: observer
