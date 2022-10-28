@@ -1,8 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
-
 project(adapter)
-
-set(CMAKE_CXX_STANDARD 20)
 
 find_package(RapidJSON CONFIG REQUIRED)
 find_package(restclient-cpp CONFIG REQUIRED)
