@@ -2,6 +2,7 @@
 #include <list>
 #include <string>
 #include <utility>
+#include <mutex>
 
 class IObserver {
  public:
@@ -21,16 +22,17 @@ class EventManager : public IEventManager {
  public:
   ~EventManager() override = default;
 
-  /**
-   * The subscription management methods.
-   */
+  /* Subscription management methods */
   void Subscribe(IObserver *observer) override {
+    std::scoped_lock<std::mutex> lock{mtx};
     observers_.push_back(observer);
   }
   void Unsubscribe(IObserver *observer) override {
+    std::scoped_lock<std::mutex> lock{mtx};
     observers_.remove(observer);
   }
   void Notify(std::string message) override {
+    std::scoped_lock<std::mutex> lock{mtx};
     auto iterator = observers_.begin();
     HowManyObserver();
     while (iterator != observers_.end()) {
@@ -45,6 +47,7 @@ class EventManager : public IEventManager {
 
  private:
   std::list<IObserver *> observers_;
+  std::mutex mtx;
 };
 
 class Subject {
@@ -118,6 +121,7 @@ void ClientCode() {
   p_observer2->RemoveMeFromTheList();
 
   p_subject->CreateMessage("My new car is great! ;)");
+
   p_observer1->RemoveMeFromTheList();
 
   delete p_observer1;
